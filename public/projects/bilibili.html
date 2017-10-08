@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Bilibili API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link type="image/x-icon" rel="icon" href="../images/favicon.ico">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo"><a href="/">Syugen Land <span>by Charlie Zhou</span></a></div>
+			<a href="#menu">Menu</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="/">Home</a></li>
+				<li><a href="project">Achievements</a></li>
+				<li><a href="interest">Interests</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<section class="wrapper style1">
+				<div class="inner">
+					<h2>Bilibili API
+						<span class="image right">
+						    <img src="../images/bilibili_demo.png" alt="" />
+					    </span>
+					</h2><hr>
+					<p>
+						<span class="icon fa-clock-o"></span><b>Started</b>: August 2017<br>
+						<span class="icon fa-clock-o"></span><b>Latest update</b>: September 2017
+					</p><hr>
+					<p>
+						<b>Tags</b>: Node.js, Express, MySQL, HTML/CSS, Web App, API<br>
+						<b>How</b>: <a href="http://bili.utoptutor.com">Visit this Link</a><br>
+						<b>Objective</b>: Using public APIs offered by <a href="https://bilibili.com">bilibili.com</a>, a famous video website in China, to dynamically gain and analyze data of videos and users.
+					</p><hr>
+					    This project consists of two parts:<br>
+						<ol>
+							<li>Private part: store static information of over 14 million videos obtained in last August 2017 into my database. As a practice of learning database, analyze how MySQL stores and modify them upon changing.</li>
+							<li>Public part: offer GUI to users to search for information of a specific video or an account. More features are still being added. The GUI is currently a RESTful web application built with Node.js. I intend to build an iOS app to extend this project.</li>
+						</ol>
+					</p><hr>
+					<p><b>Website (public part) Development Log (partial)</b><br>
+						<ul>
+							<li>9月6日 19:09 b3e8c117f64f241e57438ac5e581a4a8740f9d9a
+								<ol>
+									<li>应用模板创建首页，更换背景</li>
+									<li>以UTopTutorNodeJs项目为原型，修改部分代码</li>
+									<li>添加Git忽略文件名单</li>
+								</ol>
+							</li>
+							<li>9月7日 18:08 2078fcd14fcab98662db123363b80b8feba9a1c9
+								<ol>
+									<li>学习了如何从后台（服务器）发送HTTP请求给另一个网站，并使用B站API获取视频信息数据</li>
+									<li>给首页的链接添加了Listener，点击时跳转到新建的视频信息页面stat.html</li>
+									<li>base.html页面格式基本确定，head中一次为meta、link（包括css）、script库。而其他script脚本放在body最后</li>
+								</ol>
+							</li>
+							<li>9月8日 23:11 c82d8756cef6c186e55c8088193e984952b6be4b
+								<ol>
+									<li>除从B站API读取视频信息外，添加直接从B站视频页面摘取信息。开始时发现GET得到的内容为乱码，猜想可能是B站防止外部网站访问而需要设置headers，但如论怎样设置都是乱码，后发现仅仅是因为返回的数据是压缩格式的</li>
+									<li>将stat.html改名为video.html，因为考虑到用户界面也涉及到用户的stat</li>
+									<li>将视频信息显示在表格中</li>
+								</ol>
+							</li>
+							<li>9月8日 2:18 919419bcb02b54da4c0e8082de0cfccfc39c02ac
+								<ol>
+									<li>谷歌浏览器对于前台用AJAX发送GET请求（可能包括POST等）到别的网站时会出现No Access-Control-Allow-Origin header is present的错误。因此不能在前台直接访问API</li>
+									<li>发现哔哩哔哩唧唧的非官方API。后台渲染返回前，使用唧唧API获取更多信息，如视频标题、分P信息等</li>
+									<li>由于使用了唧唧API，页面读取的一些内容不再需要</li>
+								</ol>
+							</li>
+							<li>9月8日 22:17 2fe8e1cb6ebeff88ed8fdecb0d4b9dcad0b70441
+								<ol>
+									<li>将获取视频信息的三个渠道（官方API，唧唧API，读取页面）思路缕清：先在后台渲染好官方和唧唧API的内容，返回后再运行前台脚本请求读取B站页面上的信息。</li>
+									<li>改善对于错误回应的处理，包括访问B站API时返回非200的，访问B站API成功但视频不存在的，访问唧唧API但是被UP主设定禁止访问的，访问B站页面信息时由于番剧页面会跳转而导致获得的内容无法解析的</li>
+									<li>添加了UP主头像和视频缩略图，必须在HTML顶端加一行meta避免外链被禁</li>
+									<li>改善了分P的样式，使得序号不会被遮挡</li>
+									<li>改善GET请求函数的格式</li>
+									<li>浏览器标签改为视频名称开头</li>
+								</ol>
+							</li>
+							<li>9月9日 0:17 0d66c69f01fd33a12f545e5d3394f22cbde0f192
+								<ol>
+									<li>分P的格式仅在屏幕宽度大于737时（即双栏时）有效</li>
+									<li>添加iframe播放外链</li>
+									<li>首页Search由链接改为表格</li>
+									<li>添加页脚（目前仅为美观）</li>
+								</ol>
+							</li>
+							<li>9月10日 0:52 a5df8cf762f50089bc570f733c5b6f6caa5a5664
+								<ol>
+									<li>随着app变得庞大，将主文件中的获取视频信息的函数放到新建的route文件夹中video.js</li>
+									<li>开始实现用户界面，在首页添加搜索用户的选项，添加user.html页面，user.js处理获取用户视频列表的请求</li>
+								</ol>
+							</li>
+							<li>9月10日 13:03 0a89ae33a1ac45650d1a49de4c969f799f38d750
+								<ol>
+									<li>通过观察B站页面加载行为，发现了在用户界面获取关注列表、粉丝列表的API</li>
+									<li>添加folllow.html页面</li>
+									<li>添加GET关注列表和粉丝列表的请求处理，获取数据使用上述API</li>
+									<li>由于与获取视频列表代码类似，将获取关注列表和粉丝列表代码合并</li>
+									<li>为减少重复，将所有“肥肠抱歉”的内容移动到新建的conn_fail.html</li>
+									<li>res.render时html后缀名可以省略</li>
+								</ol>
+							</li>
+							<li>9月10日 14:43 f85ba1a63809f8393dd9ab6ace7ee66053957f36
+								<ol>
+									<li>考虑到API都是公开的，因为没有必要在后台渲染好再发送到前台。因此将用户视频/关注/粉丝改为：后台得到页面请求后直接返回模板和脚本，再让前台脚本向后台发送获取三个列表及三个列表长度的请求(*)。
+										请求是非同步的，可同时进行；由于后台对每个请求只能回复一次，必须同步地各个处理，速度慢且代码极其复杂。(*)外网API无法由前台直接GET访问，仍需要前台脚本联系后台，后台访问并得到数据后再返回前台</li>
+									<li>添加script/folllow.js和user_amount.js脚本，分别为获取关注/粉丝和获取三个列表长度的请求</li>
+									<li>将所有使用B站API的请求放到api.js中，创建httpGet函数避免代码重复</li>
+									<li>改进follow.html和user.html页面，两个页面都有切换视频/关注/粉丝的标题</li>
+								</ol>
+							</li>
+							<li>9月10日 22:25 cc414aec1163816141554d480d5f12ba16874560
+								<ol>
+									<li>合并follow.html和user.html页面</li>
+									<li>添加script/user_video.js脚本，现在获取视频列表也与获取关注/粉丝列表一样是先得到模板，再用脚本请求了。</li>
+								</ol>
+							</li>
+							<li>9月11日 2:16 48030e7b8bae3cf6861938cbe99a578386d9a01a
+								<ol>
+									<li>B站获取用户信息的API是POST，研究了许久正确的数据格式。最终发现header中需要referer和content-type，否则会得到400错误，另外发现POST数据格式其实不是JSON，而是和GET一样的URL格式。</li>
+									<li>由于可以读取用户信息了，将获取视频列表的URL由/user改为/uservideo，/user用于读取用户信息</li>
+									<li>script/user_amount.js改名为user_basics.js，因为有关user的页面都用得到</li>
+								</ol>
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="copyright">
+				<ul class="icons">
+					<li><a href="https://github.com/Syugen" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/yuan-zhou-42059314a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:syugen.zhou@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.scrolly.min.js"></script>
+		<script src="../js/jquery.scrollex.min.js"></script>
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/util.js"></script>
+		<script src="../js/main.js"></script>
+
+	</body>
+</html>

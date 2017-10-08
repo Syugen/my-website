@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>My Tetris</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link type="image/x-icon" rel="icon" href="../images/favicon.ico">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo"><a href="/">Syugen Land <span>by Charlie Zhou</span></a></div>
+			<a href="#menu">Menu</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="/">Home</a></li>
+				<li><a href="project">Achievements</a></li>
+				<li><a href="interest">Interests</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<section class="wrapper style1">
+				<div class="inner">
+					<h2>My Tetris
+						<span class="image right">
+						    <img src="../images/tetris_demo.png" alt="" />
+					    </span>
+					</h2><hr>
+					<p>
+						<span class="icon fa-clock-o"></span><b>Started</b>: November 2013
+						<span class="icon fa-clock-o"></span><b>Finished</b>: December 2013
+					</p>
+					<p>
+						<b>Tags</b>: C, Microsoft Virtual C++ 6.0, Game Design<br>
+						<b>How</b>: <a href="https://github.com/Syugen/my-tetris">Download from Github</a> and run <code>release/方块拼图V2.2.1224.exe</code> in Windows XP/Vista/7/8.x.<br>
+						<b>Objective</b>: A game similar to Tetris.<br>
+					</p><hr>
+					<p>
+						By the time I implemented this game, I only learnt how to write code in C, but had no knowledge of coding style. Thus, although this game had been a great achievement for me in 2013, it is actually terriblely written.
+					</p>
+					<p>
+						<b>Rules</b>:
+						<ul>
+							<li>Use mouse or keyboard to move and place tetrominoes onto the board.</li>
+							<li>When there is a 3 by 3 or larger region that is all placed with tetrominoes, they are all destroyed and the player gains scores.</li>
+							<li>The player comes to the next stage if they place enough tetrominoes, but the tetrominoes remained when level-up can become undestroable with probability.</li>
+							<li>The player can buy tool by spending scores they earned to help them.</li>
+						</ul>
+					</p><hr>
+					<p><b>Development Log</b><br>
+						Beta版：（不具有游戏功能）
+						<ul>
+							<li>2013年11月14日：方块拼图Beta1.0.1114
+								<ol>
+									<li>制作游戏界面（欢迎界面不能键盘操作）</li>
+									<li>鼠标或键盘控制格子选定位置</li>
+								</ol>
+							</li>
+							<li>2013年11月15日：方块拼图Beta2.0.1115
+								<ol>
+									<li>添加用户登录模块</li>
+									<li>添加设置功能，包括更改昵称与密码、添加删除账号</li>
+									<li>添加简单的帮助对话框</li>
+								</ol>
+							</li>
+							<li>2013年11月17日：方块拼图Beta3.0.1117
+								<ol>
+									<li>添加排名显示功能（bug只显示每个玩家的一个记录）</li>
+								</ol>
+							</li>
+							<li>2013年11月19日：方块拼图Beta4.0.1119
+								<ol>
+									<li>添加放置7种棋子功能，即可以正式进行游戏（不能旋转）</li>
+									<li>添加消除3×3面积的棋子功能</li>
+									<li>添加关卡概念（过关后没有清空画面）</li>
+									<li>添加重玩功能</li>
+								</ol>
+							</li>
+							<li>2013年11月20日：方块拼图Beta5.0.1120
+								<ol>
+									<li>添加旋转棋子功能</li>
+									<li>添加判断游戏失败的功能</li>
+									<li>改进消除功能，可以消除任意3×3及以上面积（bug）</li>
+									<li>添加过关后清空屏幕功能</li>
+									<li>添加关卡上限</li>
+									<li>添加随机放置障碍棋子功能</li>
+									<li>改进重玩功能，添加确认提示框（bug：取消后棋子会改变）</li>
+								</ol>
+							</li>
+						</ul>
+						正式版：（可以进行游戏）
+						<ul>
+							<li>2013年11月23日：方块拼图1.0.1123
+								<ol>
+									<li>添加显示目前玩家名称</li>
+									<li>添加排名中显示个人排名功能</li>
+									<li>解决了关闭设置/帮助/排名后棋子会改变的bug</li>
+								</ol>
+							</li>
+							<li>2013年11月23日：方块拼图1.0b.1123
+								<ol>
+									<li>解决了以L型和反L型棋子不能判断游戏结束的bug</li>
+								</ol>
+							</li>
+							<li>2013年11月24日：方块拼图1.1.1124
+								<ol>
+									<li>将系统消息框(MessageBox)改为自编消息框函数</li>
+									<li>添加选择游戏难度功能</li>
+									<li>添加选择棋子颜色功能</li>
+									<li>添加出现消息框时背景打马赛克功能</li>
+								</ol>
+							</li>
+							<li>2013年11月25日：方块拼图1.2.1125
+								<ol>
+									<li>添加悔棋功能</li>
+									<li>添加关闭游戏时提示是否保存游戏记录功能</li>
+									<li>添加游戏开始时提示是否载入游戏记录功能</li>
+									<li>添加消除棋子时的动画</li>
+									<li>自编消息框函数中添加icon图</li>
+									<li>改进灰色棋子生成算法，在上局剩余棋子中生成</li>
+								</ol>
+							</li>
+							<li>2013年11月26日：方块拼图1.3.1126
+								<ol>
+									<li>添加生成灰色棋子时的动画</li>
+								</ol>
+							</li>
+							<li>2013年11月26日：方块拼图1.3b.1126
+								<ol>
+									<li>解决两次以上改颜色无效的bug</li>
+									<li>解决鼠标移到边缘没有预览棋子的bug</li>
+									<li>解决了防止失败后不能保持旋转记录的bug</li>
+								</ol>
+							</li>
+							<li>2013年11月27日：方块拼图1.4.1127
+								<ol>
+									<li>更改算法使得每个账号可以拥有多个游戏记录</li>
+									<li>更改算法使得名单链表全部使用动态空间</li>
+									<li>解决了当前用户改昵称失败后显示当前玩家错误的bug</li>
+									<li>解决了→无数个!!!由于解决bug和改进算法产生的bug</li>
+								</ol>
+							</li>
+							<li>2013年11月28日：方块拼图1.5.1128
+								<ol>
+									<li>将重要变量改为全局变量</li>
+									<li>解决由于修改产生的大量bug</li>
+									<li>更改算法，更改难度后将重新开局</li>
+									<li>更改算法，可同时消除多个矩阵时有限消除面积大者</li>
+									<li>将系统选择框(MessageBox)改为自编选择框函数</li>
+								</ol>
+							</li>
+							<li>2013年11月29日：方块拼图1.6.1129
+								<ol>
+									<li>添加商店功能，包括四种游戏道具</li>
+								</ol>
+							</li>
+							<li>2013年11月30日：方块拼图1.7.1130
+								<ol>
+									<li>添加商店里新的两种游戏道具</li>
+									<li>将多个游戏插图资源合并为一个文件以减少文件数</li>
+									<li>解决了L型棋子放置判断错误的bug</li>
+								</ol>
+							</li>
+							<li>2013年12月1日：方块拼图1.8.1201
+								<ol>
+									<li>将帮助功能改为动画介绍</li>
+								</ol>
+							</li>
+							<li>2013年12月3日：方块拼图1.9.1203
+								<ol>
+									<li>将多种棋子/棋盘插图合并为一个图片文件</li>
+									<li>鼠标经过不能放置的棋盘位置时棋子显示红叉</li>
+									<li>将大部分全局变量删除</li>
+								</ol>
+							</li>
+							<li>2013年12月20日：方块拼图2.0.1220
+								<ol>
+									<li>将EasyX输入框(InputBox)改为自编输入框函数，输入密码可以显示星号</li>
+								</ol>
+							</li>
+							<li>2013年12月21日：方块拼图2.1.1221
+								<ol>
+									<li>游戏结束时显示分数</li>
+								</ol>
+							</li>
+							<li>2013年12月24日：方块拼图2.2.1224
+								<ol>
+									<li>最终修改</li>
+								</ol>
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="copyright">
+				<ul class="icons">
+					<li><a href="https://github.com/Syugen" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/yuan-zhou-42059314a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:syugen.zhou@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.scrolly.min.js"></script>
+		<script src="../js/jquery.scrollex.min.js"></script>
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/util.js"></script>
+		<script src="../js/main.js"></script>
+
+	</body>
+</html>

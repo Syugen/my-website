@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>UTop Tutor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link type="image/x-icon" rel="icon" href="../images/favicon.ico">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo"><a href="/">Syugen Land <span>by Charlie Zhou</span></a></div>
+			<a href="#menu">Menu</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="/">Home</a></li>
+				<li><a href="project">Achievements</a></li>
+				<li><a href="interest">Interests</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<section class="wrapper style1">
+				<div class="inner">
+					<h2>UTop Tutor
+						<span class="image right">
+						    <img src="../images/utop_demo.png" alt="" />
+					    </span>
+					</h2><hr>
+					<p>
+						<span class="icon fa-clock-o"></span><b>Started</b>: September 2016<br>
+						<span class="icon fa-clock-o"></span><b>Latest update</b>: April 2017
+					</p>
+					<p>
+						<b>Tags</b>: Node.js, Express, MongoDB, HTML/CSS, Web App<br>
+						<b>How</b>: <a href="http://utoptutor.com">Visit this Link</a><br>
+						<b>Objective</b>: Designed for UTop Tutor, an organization that offers tutoring services for students in UofT. Users can log in and make appointments with tutors.<br>
+					</p><hr>
+					<p>
+					    The website for UTop Tutor, a student organization.
+						<ul>
+							<li>Phase 1: September 2016 - December 2016
+								 <ul>
+									 <li>The website is built with Apache web server.</li>
+									 <li>The backend is written in PHP.</li>
+									 <li>MySQL is used for storing user and order information.</li>
+									 <li>When an order is placed, an automatic email is sent to the user by PHP Mailer.</li>
+									 <li>This old version of website can be reached <a href="http://apache.utoptutor.com">here</a> or on <a href="https://github.com/Syugen/utop-server-apache">GitHub</a> but is not functional</li>
+								 </ul>
+							</li>
+							<li>Phase 2: January 2017 - March 2017
+								 <ul>
+									 <li>New feature added: auto-tester for students' assignment.</li>
+									 <li>Students can upload their python file for CSC108 assignment and will be replied with a score. One IP address has three chances per day.</li>
+									 <li>This feature is naively implemented in PHP at first<br>
+										 Some students' code contains infinite loop and the auto-tester will run it forever.<br>
+										 Thus, a "kill" command was added to terminate timeout processes.</li>
+									 <li>As it becomes more popular, I noticed that some saboteur uploaded a fork bomb and attemped to stole files on the server on seperate days.<br>
+										 The fork bomb crisis was solved by disabling the <code>sys</code> module in the Python test file.</li>
+									 <li>Statistics shows that the auto-tester was ran over 3000 times during a two-week period.</li>
+								 </ul>
+							 </li>
+							<li>Phase 3: April 2017 - May 2017
+								<ul>
+									<li>A new website is built with Node.js Express server and the backend is of course written in JavaScript.</li>
+									<li>This is a RESTful web application. The user and the server communicates via GET and POST requests.</li>
+									<li>The frontend web pages are rendered dynamically and Bootstrap is used for CSS.</li>
+									<li>NoSQL database MongoDB is chosen for this app.</li>
+									<li>Users are able to update their personal information.</li>
+									<li>For better extensibility, NGINX proxy server was added to direct visits from different URL to according port.</li>
+								</ul>
+							</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="copyright">
+				<ul class="icons">
+					<li><a href="https://github.com/Syugen" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/yuan-zhou-42059314a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:syugen.zhou@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.scrolly.min.js"></script>
+		<script src="../js/jquery.scrollex.min.js"></script>
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/util.js"></script>
+		<script src="../js/main.js"></script>
+
+	</body>
+</html>
