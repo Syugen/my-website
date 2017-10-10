@@ -26,7 +26,7 @@ app.get("/project/:name", function(req, res) {
     if (fs.existsSync(path)) {
         res.sendFile(path);
     } else {
-        res.status(404).send("DNE (For a better 404 page, constructing)");
+        res.status(404).sendFile(__dirname + "/public/conn_fail.html");
     }
 });
 
@@ -35,7 +35,7 @@ app.get("/interest", function(req, res) {
 });
 
 app.get("*", function(req, res) {
-    res.status(404).send("404 (For a better 404 page, constructing)");
+    res.status(404).send(__dirname + "/public/conn_fail.html");
 });
 
 server.listen(3003, function(request, response) {
