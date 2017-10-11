@@ -3688,6 +3688,25 @@
 
 /* Banner */
 
+    .bannerIndex {
+		background-image: url("../../images/banner.jpg");
+		background-position: center;
+	}
+
+	.bannerInterest {
+		background-image: url("../../images/akali.jpg");
+		background-position: 0% 18%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.bannerProject {
+		background-image: url("../../images/intersteller.jpg");
+		background-position: 0% 62%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
 	#banner {
 		display: -ms-flexbox;
 		-ms-flex-pack: center;
@@ -3705,8 +3724,6 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
-		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
 		border-top: 0;
@@ -3740,6 +3757,14 @@
 		#banner p {
 			color: rgba(255, 255, 255, 0.85);
 			font-size: 1.75em;
+		}
+
+		.bannerInterest h1 {
+			color: #FFF;
+		}
+
+		.bannerInterest p {
+			color: rgba(255, 255, 255, 0.85);
 		}
 
 	@-moz-keyframes more {
@@ -3782,7 +3807,7 @@
 		}
 	}
 
-		#banner:before {
+		#banner:before, .bannerInterest:before {
 			-moz-transition: opacity 3s ease;
 			-webkit-transition: opacity 3s ease;
 			-ms-transition: opacity 3s ease;

@@ -31,11 +31,11 @@ app.get("/project/:name", function(req, res) {
 });
 
 app.get("/interest", function(req, res) {
-    res.send("Constructing");
+    res.sendFile(__dirname + "/public/interest.html");
 });
 
 app.get("*", function(req, res) {
-    res.status(404).send(__dirname + "/public/conn_fail.html");
+    res.status(404).sendFile(__dirname + "/public/conn_fail.html");
 });
 
 server.listen(3003, function(request, response) {
